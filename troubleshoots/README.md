@@ -1,6 +1,7 @@
 Troubleshooting & Issues Faced – Three-Tier AWS Architecture
 
 This section documents the real issues I faced while building the three-tier web application using ALB, EC2, and RDS, and how each problem was understood and resolved.
+
 ❌ 1. EC2 instance not reachable via SSH
 
 What happened
@@ -15,6 +16,7 @@ Resolution / Design decision
 
 This was intentional and correct. In a three-tier architecture, application servers must be isolated.
 All external traffic is routed through the Application Load Balancer (ALB).
+
 ❌ 2. EC2 cannot be accessed from the internet
 
 What happened
@@ -33,6 +35,7 @@ What this confirms
 
 ✔ ALB is the only public entry point
 ✔ EC2 is protected from direct exposure
+
 ❌ 3. Failed to install MySQL on Amazon Linux
 
 What happened
@@ -56,6 +59,7 @@ How it was fixed
 I installed MariaDB client, which is MySQL-compatible and supported:
 
 sudo yum install -y mariadb105
+
 ❌ 4. Target group showing “Unhealthy”
 
 What happened
